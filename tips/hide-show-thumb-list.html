@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hide - Show thumb list</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box; 
+		}
+		.box-list {
+			list-style: none;
+			float: left;
+		}
+
+		.item {
+			width: 350px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			margin-bottom: 5px;
+			cursor: pointer;
+		}
+
+		.item:hover {
+			background-color: #f3f3f3;
+		}
+
+		.box-options {
+			float: left;
+			margin-left: 30px;
+		}
+
+		.box {
+			border: 1px solid #ccc;
+			width: 350px;
+			height: 227px;
+		}
+
+		.blue { background-color: blue; }
+		.red { background-color: red; }
+		.gray { background-color: gray; }
+		.pink { background-color: pink; }
+		.green { background-color: green; }
+
+		.none { display: none; }		
+	</style>
+</head>
+<body>
+	<ul class="box-list">
+		<li data-js="blue" class="item">blue</li>
+		<li data-js="red" class="item">red</li>
+		<li data-js="gray" class="item">gray</li>
+		<li data-js="pink" class="item">pink</li>
+		<li data-js="green" class="item">green</li>
+	</ul>
+
+	<div class="box-options">
+		<div class="box blue">&nbsp;</div>
+		<div class="box red none">&nbsp;</div>
+		<div class="box gray none">&nbsp;</div>
+		<div class="box pink none">&nbsp;</div>
+		<div class="box green none">&nbsp;</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('.item').on('click', function(){
+				var valItem = $(this).attr('data-js');
+				
+				$('.box').hide();
+				$('.' + valItem).show();
+			});											
+		});		
+	</script>
+</body>
+</html>
