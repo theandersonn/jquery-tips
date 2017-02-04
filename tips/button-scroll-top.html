@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button Scroll Top</title>
+
+	<style>
+		* {
+		margin: 0;
+		padding: 0;
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: 768px;
+		}	
+
+		p {
+			line-height: 24px;
+			margin-bottom: 30px;
+		}		
+
+		.btn {
+			display: none;
+			position: fixed;
+			bottom: 40px;
+			right: 40px;
+			padding: 5px 15px;
+			background-color: purple;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+
+		<h1 data-js="title">Animated Scroll To Top Button With jQuery</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique augue vitae interdum sollicitudin. Maecenas consectetur augue sed urna mollis, ut suscipit massa blandit. Nam sapien dolor, mollis at arcu eu, tempor molestie lacus. Quisque dictum mauris elementum tortor congue, eu rhoncus arcu auctor. In posuere nulla nec purus suscipit facilisis. Cras ut eleifend ante, a ultrices enim. Maecenas semper, velit a sagittis suscipit, arcu urna dapibus mauris, ac posuere tortor justo sit amet enim. Phasellus erat nunc, consectetur id euismod a, hendrerit at odio. Donec pellentesque lectus ut aliquam tincidunt. Ut quis feugiat metus. Vivamus in sapien laoreet, auctor lectus in, ornare nisi.</p>
+
+		<p>Sed gravida mi eu est mattis tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu augue sem. Maecenas eros purus, maximus eu tortor ut, ultrices mattis turpis. Proin porttitor turpis erat, in accumsan elit suscipit et. Integer odio lectus, pharetra non consectetur vel, varius nec justo. Vestibulum posuere sem non massa dignissim iaculis et convallis dolor. Quisque vitae laoreet augue, vel maximus eros. Ut quis nulla viverra, congue mauris sit amet, porta lorem. Ut et risus rutrum felis facilisis vestibulum. Cras auctor sapien ut augue iaculis, non viverra ex dictum. Quisque non tincidunt mauris.</p>
+
+		<p>Sed tincidunt leo id metus congue, sed luctus ex aliquam. Quisque in dolor at orci tempus dapibus. Aenean ultrices vestibulum dolor vitae porta. Nulla elit sem, efficitur a orci at, vehicula congue quam. Maecenas vel sagittis lacus, non aliquam risus. Aliquam placerat elit vel blandit finibus. Integer et malesuada sapien. Vivamus at aliquet diam. Praesent nec auctor urna. Praesent placerat mi malesuada lacinia sodales. Phasellus pretium ante at est maximus scelerisque. Phasellus accumsan purus sit amet orci efficitur, egestas volutpat quam pellentesque.</p>
+
+		<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam eu congue ex, nec dictum lorem. Vivamus sollicitudin commodo eros ac posuere. Vivamus vel nibh eu lectus consequat egestas. Morbi lacinia luctus dolor eu iaculis. Fusce accumsan massa vel felis condimentum, non cursus justo ornare. Nunc quis augue interdum, pharetra erat et, mattis sem. Sed eleifend dignissim lacinia. Pellentesque leo nisl, vulputate id lobortis ut, faucibus quis massa. In at placerat sapien. In sed pellentesque nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+
+		<p>Nunc volutpat nec ex id cursus. In interdum sollicitudin tellus ac vestibulum. Vestibulum in nibh elementum, dapibus massa non, lobortis nibh. Sed sodales, ante eu laoreet consequat, eros lacus tempus urna, pharetra convallis nunc lorem sed mauris. Aenean leo libero, vestibulum non dolor nec, placerat luctus libero. Nullam porttitor suscipit erat, porta semper nisl convallis in. Fusce tortor mauris, suscipit sit amet libero non, gravida placerat mi. Curabitur id ipsum sed magna semper lacinia. Cras feugiat a nunc id dapibus. Sed tempus sed ante vel rutrum. Nullam porttitor fermentum iaculis. Proin interdum, purus ac congue imperdiet, neque metus maximus est, vel convallis neque nibh et justo. Mauris tristique euismod augue, vitae sollicitudin ligula venenatis nec. Morbi at semper neque, in ullamcorper nisi.</p>
+
+		<p>Donec ultricies mollis risus quis facilisis. Donec eu sapien faucibus elit accumsan porta. Integer mattis pulvinar justo ut pretium. Vivamus eros dolor, venenatis sit amet vulputate rutrum, cursus sed risus. Suspendisse porta nunc a sodales fermentum. Etiam in felis turpis. Quisque ultrices dignissim justo, quis molestie eros consectetur quis. Nullam lacinia lacinia ante ac eleifend. Vivamus quis diam felis. Praesent fermentum augue bibendum nisl vestibulum porta. Vestibulum ut ligula aliquet, dapibus mi sit amet, vulputate felis. Phasellus luctus ipsum lectus, non accumsan felis accumsan sagittis. Duis tempus dui eu sollicitudin consequat. Etiam lacinia lacus mauris, vel tempor nulla condimentum in. Donec nec risus nisi. Nullam porttitor massa vel erat ultricies, egestas tristique mi fermentum.</p>
+
+		<p>Aenean vitae lacus nec purus ullamcorper eleifend. Nunc lobortis, erat eget lacinia pretium, mi nulla laoreet lorem, eu fermentum nisl metus at diam. Nullam laoreet, sem non mattis sagittis, nibh quam facilisis eros, eget lobortis lectus quam id velit. Morbi tellus sapien, dictum id mauris id, sollicitudin finibus justo. Nam venenatis nunc et ex interdum dapibus. Nam ac lobortis magna, eget consectetur enim. Aliquam vehicula dolor ut maximus condimentum. Sed venenatis pellentesque felis a finibus. Curabitur at nisl ullamcorper, interdum nulla eget, interdum leo.</p>
+
+		<p>Aliquam sodales fringilla orci ut scelerisque. Sed eu metus nec tellus condimentum placerat. Nulla sit amet venenatis quam. Sed mauris augue, tempor a mauris eu, venenatis rutrum elit. Quisque et libero et elit pretium faucibus. Donec magna ex, dignissim id maximus quis, vestibulum a est. Nam posuere ligula enim, nec interdum nibh rutrum id. Sed at ante aliquet, efficitur diam quis, dictum ex. Proin porta blandit mi at eleifend. Donec aliquam purus quis justo ultricies viverra. Donec nec augue quis leo varius dictum in a odio. Sed quis nulla justo. Cras quis metus nulla. Sed mollis risus a ligula accumsan consequat.</p>
+
+		<p>Aenean orci nibh, aliquet sed vehicula eu, blandit quis velit. Donec efficitur sem eu nunc lobortis fringilla. Praesent lobortis ac nulla nec auctor. Morbi et sem vel mi ornare tempus eleifend a libero. Curabitur ac egestas tellus, non dictum libero. Nulla ut nunc diam. Donec dictum quam eget orci tincidunt viverra. Duis venenatis ante nisi, nec suscipit justo vulputate sed. In gravida consequat arcu. Etiam id lacus a dui accumsan dictum venenatis nec purus. Nulla sed orci id neque vestibulum elementum in ac mi. Praesent dignissim metus nec scelerisque semper. Cras dignissim odio vitae erat vestibulum consectetur.</p>
+
+		<p>Donec sollicitudin, ex ut mattis luctus, ipsum nisi tincidunt justo, ac efficitur quam ex in leo. Phasellus id enim congue sem bibendum efficitur non suscipit ex. Phasellus eget elit id augue dictum consequat id eget risus. Quisque laoreet eu velit nec fermentum. Maecenas id dictum eros, at pellentesque sapien. Suspendisse eget ultrices felis. Nullam eu tempus urna, at commodo arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et egestas est, ut varius lorem. Phasellus ac purus diam. Aliquam interdum lacinia felis, in ultrices elit ullamcorper in. Aenean a est ex. Vivamus sit amet magna porttitor, aliquam nisi sed, facilisis massa. Curabitur dictum id nunc in imperdiet. Quisque bibendum risus ac est congue varius. Fusce arcu lectus, posuere et lacus quis, gravida </p>
+
+		<p>Aliquam sodales fringilla orci ut scelerisque. Sed eu metus nec tellus condimentum placerat. Nulla sit amet venenatis quam. Sed mauris augue, tempor a mauris eu, venenatis rutrum elit. Quisque et libero et elit pretium faucibus. Donec magna ex, dignissim id maximus quis, vestibulum a est. Nam posuere ligula enim, nec interdum nibh rutrum id. Sed at ante aliquet, efficitur diam quis, dictum ex. Proin porta blandit mi at eleifend. Donec aliquam purus quis justo ultricies viverra. Donec nec augue quis leo varius dictum in a odio. Sed quis nulla justo. Cras quis metus nulla. Sed mollis risus a ligula accumsan consequat.</p>
+
+		<p>Aenean orci nibh, aliquet sed vehicula eu, blandit quis velit. Donec efficitur sem eu nunc lobortis fringilla. Praesent lobortis ac nulla nec auctor. Morbi et sem vel mi ornare tempus eleifend a libero. Curabitur ac egestas tellus, non dictum libero. Nulla ut nunc diam. Donec dictum quam eget orci tincidunt viverra. Duis venenatis ante nisi, nec suscipit justo vulputate sed. In gravida consequat arcu. Etiam id lacus a dui accumsan dictum venenatis nec purus. Nulla sed orci id neque vestibulum elementum in ac mi. Praesent dignissim metus nec scelerisque semper. Cras dignissim odio vitae erat vestibulum consectetur.</p>
+
+		<p>Donec sollicitudin, ex ut mattis luctus, ipsum nisi tincidunt justo, ac efficitur quam ex in leo. Phasellus id enim congue sem bibendum efficitur non suscipit ex. Phasellus eget elit id augue dictum consequat id eget risus. Quisque laoreet eu velit nec fermentum. Maecenas id dictum eros, at pellentesque sapien. Suspendisse eget ultrices felis. Nullam eu tempus urna, at commodo arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla et egestas est, ut varius lorem. Phasellus ac purus diam. Aliquam interdum lacinia felis, in ultrices elit ullamcorper in. Aenean a est ex. Vivamus sit amet magna porttitor, aliquam nisi sed, facilisis massa. Curabitur dictum id nunc in imperdiet. Quisque bibendum risus ac est congue varius. Fusce arcu lectus, posuere et lacus quis, gravida </p>			
+
+
+	</div>	
+
+	<footer>
+		<a class="btn" data-js="btn" href="#">subir</a>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+		var btn = $("[data-js='btn']");	
+		
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				btn.fadeIn();
+			} else {
+				btn.fadeOut();
+			}
+		});
+		
+		btn.click(function(){
+			$('html, body').animate({
+				scrollTop : 0}
+			,800);
+			
+			return false;
+		});
+  </script>
+</body>
+</html>
