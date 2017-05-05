@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll 100% height div</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body, html{
+			height: 100%;
+		}
+
+		.box { height: 100%; }
+		.orange { background-color: orange; }
+		.purple { background-color: purple; }
+		.green { background-color: green; }
+	</style>
+</head>
+<body>
+
+	<div class="box orange">
+		&nbsp;
+	</div>
+
+	<div class="box purple">
+		&nbsp;
+	</div>
+
+	<div class="box green">
+		&nbsp;
+	</div>	
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+       var target = $('.box.orange').outerHeight();
+       
+       // var nav 	  = $('header > .nav-bar');
+       
+       $(window).scroll(function () {
+           if ( $(this).scrollTop() > target - 25 ) {
+               // nav.addClass('menu-fixed');
+               console.log('maior')
+           } else {
+               // nav.removeClass('menu-fixed');
+               console.log('kkk, não')
+           }
+       });
+	</script>
+</body>
+</html>
