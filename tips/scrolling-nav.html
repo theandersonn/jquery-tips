@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>Scrolling Nav</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			padding-top: 50px;
+		}
+
+		.menu-container {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			text-align: center;
+			background-color: purple;
+		}
+
+		.menu-box {
+			display: inline-block;
+			list-style: none;
+		}
+
+		.menu-item {
+			display: inline-block;
+			margin-left: 30px;
+		}
+
+		.menu-item > .link {
+			display: block;
+			color: #fff;
+			font-size: 15px;
+			line-height: 50px;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		.section {
+			height: 100%;
+			text-align: center;
+		}
+
+		.description {
+			color: #fff;
+			font-size: 50px;
+		}
+
+		.orange { background-color: orange;  }		
+		.green { background-color: green;  }		
+		.pink { background-color: pink;  }		
+		.red { background-color: red;  }		
+		.blue { background-color: blue;  }		
+	</style>
+</head>
+<body>
+	<nav class="menu-container">
+		<ul class="menu-box">
+			<li class="menu-item"><a class="link" href="javascript:;">link 1</a></li>
+			<li class="menu-item"><a class="link" href="javascript:;">link 2</a></li>
+			<li class="menu-item"><a class="link" href="javascript:;">link 3</a></li>
+			<li class="menu-item"><a class="link" href="javascript:;">link 4</a></li>
+			<li class="menu-item"><a class="link" href="javascript:;">link 5</a></li>
+		</ul>
+	</nav>
+
+	<section class="section orange anchor">
+		<span class="description">seção 1</span>
+	</section>
+
+	<section class="section green anchor">
+		<span class="description">seção 2</span>
+	</section>
+
+	<section class="section pink anchor">
+		<span class="description">seção 3</span>
+	</section>
+
+	<section class="section red anchor">
+		<span class="description">seção 4</span>
+	</section>
+
+	<section class="section blue anchor">
+		<span class="description">seção 5</span>
+	</section>					
+		
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+        $('.menu-box li.menu-item').on('click', function(){
+            var ind = $(this).index();
+            var scroll = $('section.anchor').eq(ind).offset().top - 50;
+
+            $('html, body').animate({
+                scrollTop: scroll
+            }, 400);
+
+            return false;
+        });		
+	</script>	
+</body>
+</html>
