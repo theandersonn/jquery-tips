@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header-box {
+	background-color: orange;
+	text-align: center;	
+	line-height: 60px;			
+}
+
+.nav-box {
+
+}		
+
+.menu-item {
+	display: inline-block;
+	margin-left: 15px;
+	padding: 0 15px;
+	text-transform: uppercase;
+}
+
+.menu-item:first-of-type {
+	margin-left: 0;
+}
+
+.menu-item > .link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu-active {
+	background-color: #000;
+	color: #fff;
+}
