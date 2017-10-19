@@ -11,5 +11,7 @@
 
 - Scrolling Nav -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/scrolling-nav.html) | [Preview](http://htmlpreview.github.io/?https://raw.githubusercontent.com/theandersonn/jquery-tips/master/tips/scrolling-nav.html) 
 
+- Scrolling Active Nav -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/scrolling-active-nav.html) | [Preview](http://htmlpreview.github.io/?https://raw.githubusercontent.com/theandersonn/jquery-tips/master/tips/scrolling-active-nav.html) 
+
 ### Thumbs
 - Aterna a visualização de uma lista de thumbs -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/hide-show-thumb-list.html) | [Preview](http://htmlpreview.github.io/?https://raw.githubusercontent.com/theandersonn/jquery-tips/master/tips/hide-show-thumb-list.html)

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>Scrolling Active Nav</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		html { box-sizing: border-box; }		
+
+		html, body {
+			height: 100%;
+		}
+
+		body { padding-top: 52px; }
+
+		.menu {
+		    width: 100%;
+		    position: fixed;
+		    top: 0;
+		    z-index: 2;
+		    background-color: #34495e;
+		    border-bottom: 1px solid #a8a8a8;
+		    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.2);
+		}	
+		
+		.nav {
+		    max-width: 860px;
+		    margin: 0 auto;		
+		}
+
+		.nav__item {
+		    float: left;
+	        position: relative;
+	        width: 20%;
+	        text-align: center;
+	        color: #c6c6c6;
+	        cursor: pointer;
+	        line-height: 50px;
+	        text-decoration: none;
+    	}
+
+    	.nav__item--active {
+			color: #f1c40f;
+    	}
+
+    	.nav__txt {
+    		font-size: 14px;
+    		text-transform: uppercase;
+    	}
+
+    	.section {
+ 			display: table;
+		    height: 100%;
+		    width: 100%;		
+    	}
+
+    	.section--one { background-color: #2ecc71; }
+    	.section--two { background-color: #9b59b6; }
+    	.section--three { background-color: #2980b9; }
+    	.section--four { background-color: #e74c3c; }
+    	.section--five { background-color: #f39c12; }
+
+		.content {
+		    display: table-cell;
+		    vertical-align: middle;
+		    text-align: center;
+		}   	
+	</style>
+</head>
+<body>
+    <!-- MENU -->
+    <div class="menu">
+        <nav class="nav">
+            <a href="#1" data-js="section-one" class="nav__item nav__item--one">
+                <span class="nav__txt">Section One</span>
+            </a>
+            <a href="#2" data-js="section-two" class="nav__item nav__item--two">
+                <span class="nav__txt">Section Two</span>
+            </a>
+            <a href="#3" data-js="section-three" class="nav__item nav__item--three">
+                <span class="nav__txt">Section Three</span>
+            </a>
+            <a href="#4" data-js="section-four" class="nav__item nav__item--four">
+                <span class="nav__txt">Section Four</span>
+            </a>
+            <a href="#5" data-js="section-five" class="nav__item nav__item--five">
+                <span class="nav__txt">Section Five</span>
+            </a>
+        </nav>
+    </div>
+
+    <section id="1" class="section section--one">
+    	<article class="content">
+    		<h1>Section One</h1>
+		</article>
+    </section>
+
+    <section id="2" class="section section--two">
+    	<article class="content">
+    		<h1>Section Two</h1>
+    	</article>
+    </section> 
+
+    <section id="3" class="section section--three">
+    	<article class="content">
+    		<h1>Section Three</h1>
+    	</article>
+    </section> 
+
+    <section id="4" class="section section--four">
+    	<article class="content">
+    		<h1>Section Four</h1>
+    	</article>
+    </section>
+
+    <section id="5" class="section section--five">
+    	<article class="content">
+    		<h1>Section Five</h1>
+    	</article>
+    </section>                					
+		
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$('a[href]').click('on', animaScroll);
+		$('.nav__item').click('on', ativaMenuClick);
+		$(window).scroll(ativaMenuScroll);
+
+		// anima Scroll
+		function animaScroll() {
+		  var target = $(this).attr("href");
+
+		  $('html, body').stop().animate({
+		    scrollTop: $(target).offset().top
+		  }, 400, function () {
+		    location.hash = target;
+		  });
+
+		  return false;
+		}
+
+		// ativa Menu Click
+		function ativaMenuClick(event) {
+		  event.preventDefault();
+
+		  var valItem = $(this).attr('data-js');
+
+		  $('.nav__item').removeClass('nav__item--active');
+		  $(this).addClass('nav__item--active');
+		}
+
+		// ativa Menu Scroll
+		function ativaMenuScroll(i) {
+		  var valueScroll = $(window).scrollTop();
+
+		  $('.section').each(function (i) {
+		    if ($(this).position().top <= valueScroll) {
+		      $('.nav a.nav__item--active').removeClass('nav__item--active');
+		      $('.nav a').eq(i).addClass('nav__item--active');
+		    }
+		  });
+		}		
+	</script>	
+</body>
+</html>
