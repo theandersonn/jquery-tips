@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu Active Color</title>
+
+	<style>
+		html { 
+			box-sizing: border-box; 
+		}
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		*, 
+		*:before, 
+		*:after { 
+			box-sizing: inherit; 
+		}
+
+		:focus {
+			outline: 0;
+		}
+
+		.nav {
+			font-size: 0;
+		}
+
+		.nav__item {
+			display: inline-block;
+			width: 25%;
+			color: #333;
+			font-size: 16px;
+			line-height: 50px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+
+		.nav__item.--blue.active { background-color: blue; }
+		.nav__item.--red.active { background-color: red; }
+		.nav__item.--orange.active { background-color: orange; }
+		.nav__item.--green.active { background-color: green; }
+
+		.active { color: white; }		
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<a href="#"><span data-js="navBlue" class="nav__item --blue">blue</span></a>
+		<a href="#"><span data-js="navRed" class="nav__item --red">red</span></a>
+		<a href="#"><span data-js="navYellow" class="nav__item --orange">orange</span></a>
+		<a href="#"><span data-js="navGreen" class="nav__item --green">green</span></a>
+	</nav>
+
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		$('.nav__item').click('on', ativaMenuClick);
+
+		function ativaMenuClick(event) {
+		  event.preventDefault();
+		  var valItem = $(this).attr('data-js');
+
+		  $('.nav__item').removeClass('active');
+		  $(this).addClass('active');
+		}		
+	</script>
+</body>
+</html>
