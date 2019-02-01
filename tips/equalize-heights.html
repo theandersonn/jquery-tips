@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Equalize Heights</title>
+
+    <style>
+        html { 
+            box-sizing: border-box; 
+        }
+
+        * {
+            margin: 0; 
+            padding: 0; 
+        }
+
+        *, 
+        *:before, 
+        *:after { 
+            box-sizing: inherit; 
+        }        
+
+        ul { list-style: none; padding-left: 0; }
+
+        ul li {
+            display: inline-block;
+            vertical-align: top;
+            width: 25%;
+            margin-left: -4px;
+            border: 1px dashed gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsam dolores accusantium. Quas explicabo, tenetur veritatis nam, quae quaerat nesciunt dolorum corrupti aut perspiciatis alias ipsum autem, sapiente necessitatibus sequi!</p> 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsam dolores accusantium. Quas explicabo, tenetur veritatis nam, quae quaerat nesciunt dolorum corrupti aut perspiciatis alias ipsum autem, sapiente necessitatibus sequi!</p>
+            <button>leia mais</button>
+        </li>
+
+        <li>
+            <h2>Lorem ipsum dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsam dolores accusantium. Quas explicabo, tenetur veritatis nam, quae quaerat nesciunt dolorum corrupti aut perspiciatis alias ipsum autem, sapiente necessitatibus sequi!</p>
+            <button>leia mais</button>
+        </li>
+
+        <li>
+            <h2>Lorem ipsum dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsam dolores accusantium. Quas explicabo, tenetur veritatis nam, quae quaerat nesciunt dolorum corrupti aut perspiciatis alias ipsum autem, sapiente necessitatibus sequi!</p>
+            <button>leia mais</button>
+        </li>
+
+        <li>
+            <h2>Lorem ipsum dolor</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ipsam dolores accusantium. Quas explicabo, tenetur veritatis nam, quae quaerat nesciunt dolorum corrupti aut perspiciatis alias ipsum autem, sapiente necessitatibus sequi!</p>
+            <button>leia mais</button>
+        </li>
+    </ul>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            function equalizeHeights(selector) {
+                var elements = $(selector);
+
+                var greaterHeight = 0;
+
+                $.each(elements, function () {
+                var currentHeight = $(this).height();
+
+                if (currentHeight > greaterHeight)
+                    greaterHeight = currentHeight;
+                });
+
+                elements.css('height', greaterHeight + 'px');
+            }
+            
+            equalizeHeights('ul > li');
+        });
+    </script>
+</body>
+</html>
