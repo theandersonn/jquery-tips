@@ -19,4 +19,4 @@
 - Scrolling Active Nav -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/scrolling-active-nav.html) 
 
 ### Thumbs
-- Aterna a visualização de uma lista de thumbs -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/hide-show-thumb-list.html) 
+- Hide Show Thumb List -> [Code](https://github.com/theandersonn/jquery-tips/blob/master/tips/hide-show-thumb-list.html) 
